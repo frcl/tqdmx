@@ -10,7 +10,7 @@ from tqdm.auto import tqdm as tqdm_auto
 from tqdm.contrib.utils_worker import MonoWorker
 
 
-__version__ = '0.1.0'
+__version__ = '0.1.1'
 
 
 class MatrxIO(MonoWorker):
@@ -82,6 +82,8 @@ class MatrxIO(MonoWorker):
                     "m.new_content": {
                         "msgtype": "m.text",
                         "body": self.text,
+                        "format": "org.matrix.custom.html",
+                        "formatted_body": f"<code>{self.text}</code>",
                     },
                 },
             )
